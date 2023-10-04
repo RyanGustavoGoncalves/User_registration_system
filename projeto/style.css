@@ -1,0 +1,17 @@
+.base{
+    position: absolute;
+    right: 35%;
+}
+.linha{
+    outline: inset;
+    opacity: 15%;
+    outline-width: thin;
+}
+.botao{
+    padding: 10px;
+    position: relative;
+    top: -15px;
+}
+.fonte{
+    font-family: sans-serif;
+}
