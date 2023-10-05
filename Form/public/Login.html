@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Onest:wght@300&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./components/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="components/Login.js" defer></script>
+    <title>Login</title>
+</head>
+<body>
+    <main>
+        <fieldset>
+            <div class="titForm">
+                <legend>Crie sua <br> Nova Conta</legend>
+                <!-- <img src="assets/Mobile login.gif" alt="gif" width="450px"> -->
+                <div class="login">
+                    <span>Não possui uma conta? <br> Crie uma!</span>
+                </div>
+                <div class="btn">
+                    <a href="register.html">
+                        <button>Criar</button>
+                    </a>
+                </div>
+            </div>
+                <form action="">
+                    <h2>Login</h2>
+                    <div class="inp">
+                        <label>Nome</label>
+                        <input type="text" name="nome" id="nome" placeholder="Nome">
+                    </div>
+                    <div class="inp">
+                        <label>E-mail</label>
+                        <input type="email" name="email" id="email" placeholder="E-mail">
+                    </div>
+                    <div class="inp">
+                        <label>Senha</label>
+                        <input type="password" name="senha" id="senha" placeholder="Senha">
+                    </div>
+                    <div class="btn">
+                            <button>Entrar</button>
+                    </div>
+                </form>
+        </fieldset>
+    </main>
+
+    <article class="error-Box" id="BoxError">
+        <div class="tit_error">
+            <img src="assets/icons8-erro-48.png" alt="errorIcon">
+            <span>Verifique os campos!</span>
+        </div>
+        <hr>
+        <div id="error-container">
+            <!-- Os erros serão exibidos aqui -->
+        </div>
+        <div class="btnErrorCont">
+            <button id="fecharErrorBox">OK!</button>
+        </div>
+    </article>
+    
+</body>
+</html>
