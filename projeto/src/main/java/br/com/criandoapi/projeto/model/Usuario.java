@@ -20,7 +20,7 @@ public class Usuario {
     @NotEmpty(message = "O email é obrigatório!")
     @Column(name = "email", length = 90, nullable = false)
     private String email;
-    @NotEmpty(message = "A senha é obrigatório!")
+    @NotEmpty(message = "A senha é obrigatória!")
     @Column(name = "senha", columnDefinition = "TEXT", nullable = false) //columDefinition: TEXT é o tipo da coluna no mysql
     private String senha;
     public Integer getId() {

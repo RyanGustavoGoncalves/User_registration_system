@@ -38,8 +38,17 @@ public class UsuarioService {
     }
 
     public Boolean validarSenha(Usuario usuario) {
-        String senha = repository.getById(usuario.getId()).getSenha();
-        Boolean valid = passwordEncoder.matches(usuario.getSenha(), senha);
-        return valid;
+        try {
+            // Recupere a senha armazenada no banco de dados com base no ID do usuário
+            String senhaArmazenada = repository.getReferenceById(usuario.getId()).getSenha();
+
+            // Verifique se a senha fornecida corresponde à senha armazenada
+            Boolean valid = passwordEncoder.matches(usuario.getSenha(), senhaArmazenada);
+            return valid;
+        } catch (Exception e) {
+            // Lide com exceções, por exemplo, se o ID do usuário não existir no banco de dados
+            return false; // ou lançar uma exceção adequada, dependendo da sua necessidade
+        }
     }
+
 }
