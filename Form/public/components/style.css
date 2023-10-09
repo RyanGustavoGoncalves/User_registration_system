@@ -107,7 +107,11 @@ div#error-container{
     display: none;
     padding: 20px;
 }
-article.error-Box{
+div#sucess-container{
+    display: none;
+    padding: 20px;
+}
+article.sucessBox,article.BoxError{
     position: absolute;
     display: none;
     background-color: rgb(200, 200, 200);
@@ -151,5 +155,5 @@ div.login>span{
    font-size: 15px; 
 }
 hr{
-    width: 25px;
+    width: 100%;
 }

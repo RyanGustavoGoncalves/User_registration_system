@@ -4,6 +4,9 @@ const inpNome = document.getElementById("nome");
 const inEmail = document.getElementById("email");
 const inpSenha = document.getElementById("senha");
 
+var errorContainer = document.getElementById("error-container");
+var errorBox = document.getElementById("BoxError");
+
 formulario.addEventListener('submit', function (event){
     event.preventDefault();
     
@@ -31,15 +34,16 @@ function cadastrar() {
         })
     })
     .then(function (response) {
-        if (response.status === 200) {
+        if (response.status === 201) {
             // Sucesso: redirecionar ou fazer algo após o cadastro bem-sucedido
             console.log("Cadastro bem-sucedido!");
+            var sucessBox = document.getElementById("sucessBox");
+            sucessBox.style.display = 'block';
+            window.location.href = "Login.html";
         } else if (response.status === 400) {
             // Erros de validação: exibir os erros no HTML
             response.json().then(function (errors) {
-                var errorContainer = document.getElementById("error-container");
-                var errorBox = document.getElementById("BoxError");
-                errorBox.style.display = 'block'
+                errorBox.style.display = 'block';
                 errorContainer.style.display = 'block';
                 errorContainer.innerHTML = ""; // Limpar erros anteriores
                 for (var fieldName in errors) {
@@ -49,8 +53,7 @@ function cadastrar() {
                     errorElement.innerHTML = fieldName + ": " + errorMessage;
                     errorContainer.appendChild(errorElement);
                 }
-                var fecharErrorBox = document.getElementById('fecharErrorBox');
-                fecharErrorBox.addEventListener('click', function (){
+                document.getElementById('fecharBox').addEventListener('click', function (){
                     errorBox.style.display = 'none';
                     errorContainer.style.display = 'none';
                 });
